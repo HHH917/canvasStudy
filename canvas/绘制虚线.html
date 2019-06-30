@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        canvas{
+            border：1px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+<canvas width="600px" height="400px"></canvas>
+<script>
+    var myCanvas = document.querySelector('canvas');
+    var ctx = myCanvas.getContext('2d');
+
+    ctx.moveTo(100,100.5);
+    ctx.lineTo(300,100.5);
+
+    //[5,10]数值描述排列方式  先实线长度 后虚线长度 再实线循环
+    ctx.setLineDash([5,10]);
+    console.log(ctx.getLineDash());
+
+    //线条偏移量
+    ctx.lineDashOffset = -20;
+
+    ctx.stroke();
+</script>
+</body>
+</html>

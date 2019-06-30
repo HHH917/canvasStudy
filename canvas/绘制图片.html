@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        canvas{
+            border:1px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+<!--<img src="image/P51129-142538.jpg" alt="">-->
+    <canvas width="600" height="400"></canvas>
+    <script>
+        var myCanvas = document.querySelector('canvas');
+        var ctx = myCanvas.getContext('2d');
+
+        //创建事件
+        var image =new Image();
+        //绑定加载完成事件
+        image.onload = function(){
+            console.log(image);
+            ctx.drawImage(image,300,300,600,600,200,200,600,600);
+        }
+        image.src = 'image/P51129-142538.jpg';
+    </script>
+</body>
+</html>
